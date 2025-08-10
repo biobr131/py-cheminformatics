@@ -1,0 +1,23 @@
+black
+ruff
+mypy
+tox
+line_profiler
+memory_profiler
+pandas[performance, plot, computation, excel]
+polars-lts-cpu
+ibis-framework[pandas, polars]
+statsmodels
+seaborn
+fastcluster
+requests
+scikit-learn
+rdkit
+jupyterlab
+ipywidgets
+ipympl
+python-dotenv
+psycopg[binary]
+sqlalchemy
+sqlacodegen
+torch --index-url https://download.pytorch.org/whl/cpu

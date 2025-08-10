@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres
+    environment:
+      - TZ=Asia/Tokyo
+    env_file:
+      - ./src/db/.env
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  jupyter:
+    build: 
+      context: .
+      args:
+        DIR_WORK: "/usr/src"
+        ENV_YML: "environment.yaml"
+        VENV: "cheminfo"
+        DIR_CONDA: "/opt/conda"
+        REQ_TXT: "requirements.txt"
+    image: biobr131/py-cheminformatics:latest
+    container_name: jupyter
+    command: jupyter lab --ip=0.0.0.0 --allow-root --LabApp.token=''
+    ports:
+     - "8888:8888"
+    volumes:
+     - .:/usr/src
+    tty: true
+    stdin_open: true
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
