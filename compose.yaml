@@ -17,7 +17,6 @@ services:
         DIR_WORK: "/usr/src"
         ENV_YML: "environment.yaml"
         VENV: "cheminfo"
-        DIR_CONDA: "/opt/conda"
         REQ_TXT: "requirements.txt"
     image: biobr131/py-cheminformatics:latest
     container_name: jupyter
