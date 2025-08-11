@@ -4,6 +4,17 @@ mypy
 tox
 line_profiler
 memory_profiler
+pytest
+pytest-snapshot
+structlog
+pytest-structlog
+sphinx
+sphinx-rtd-theme
+numpy
+scipy
+matplotlib
+plotly
+openpyxl
 pandas[performance, plot, computation, excel]
 polars-lts-cpu
 ibis-framework[pandas, polars]
